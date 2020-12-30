@@ -1,12 +1,13 @@
 package com.slbruno.model;
 
 public class UserDTO {
+
 	private String username;
 	private String password;
 	private String firstname;
 	private String lastname;
 	private String email;
-
+	
 	public String getUsername() {
 		return username;
 	}
@@ -46,5 +47,5 @@ public class UserDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 }

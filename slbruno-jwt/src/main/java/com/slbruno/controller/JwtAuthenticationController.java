@@ -59,7 +59,7 @@ public class JwtAuthenticationController {
 		// Para retornar dados do usuário
 		DAOUser dadosUsuario;
 		dadosUsuario = userDetailsService.retornaDadosByUsername(authenticationRequest.getUsername());
-		System.out.print(dadosUsuario.getEmail());
+		System.out.print(dadosUsuario.getDaoPhones().toString());
 		return dadosUsuario;
 	}
 

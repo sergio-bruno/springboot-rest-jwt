@@ -1,0 +1,25 @@
+localhost:8080/register
+
+{
+    "username":"mariana",
+    "password":"juvenal",
+    "firstname":"juvenal",
+    "lastname":"inacio",
+    "email":"juvenal@gmail.com",
+    "phones":[
+        {
+	        "number": 988887888,
+	        "area_code": 81,
+	        "country_code": "+55"
+        }
+    ]
+}
+
+
+
+localhost:8080/authenticate
+
+{
+    "username":"mariana",
+    "password":"juvenal1"
+}

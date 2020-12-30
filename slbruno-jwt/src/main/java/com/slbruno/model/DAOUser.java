@@ -2,6 +2,9 @@ package com.slbruno.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -22,6 +25,14 @@ public class DAOUser {
 	private String lastname;
 	@Column
 	private String email;
+	
+	@JsonIgnore
+	@ManyToMany
+	@JoinTable(name = "user_phone",
+		joinColumns = @JoinColumn(name = "user_id"),
+		inverseJoinColumns = @JoinColumn(name = "phone_id")
+	)
+	private List<DAOPhone> daoPhones = new ArrayList<>();
 	
 	public String getUsername() {
 		return username;
@@ -62,4 +73,13 @@ public class DAOUser {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public List<DAOPhone> getDaoPhones() {
+		return daoPhones;
+	}
+
+	public void setDaoPhones(List<DAOPhone> daoPhones) {
+		this.daoPhones = daoPhones;
+	}
+	
 }
