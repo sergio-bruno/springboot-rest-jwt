@@ -39,7 +39,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 	
 	public DAOUser save(UserDTO user) {
 		DAOUser newUser = new DAOUser();
-		DAOPhone daoPhone = new DAOPhone();
+		//DAOPhone daoPhone = new DAOPhone();
 		
 		newUser.setUsername(user.getUsername());
 		newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
@@ -47,9 +47,9 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setLastname(user.getLastname());
 		newUser.setEmail(user.getEmail());
 		
-		daoPhone.setNumber(0);
-		daoPhone.setArea_code(0);
-		daoPhone.setCountry_code("+55");
+		//daoPhone.setNumber(0);
+		//daoPhone.setArea_code(0);
+		//daoPhone.setCountry_code("+55");
 
 		
 		
