@@ -32,6 +32,10 @@ public class JwtUserDetailsService implements UserDetailsService {
 				new ArrayList<>());
 	}
 	
+    public DAOUser retornaDadosByUsername(String username) throws UsernameNotFoundException {
+    	return userDao.findByUsername(username);
+    }
+	
 	public DAOUser save(UserDTO user) {
 		DAOUser newUser = new DAOUser();
 		newUser.setUsername(user.getUsername());
