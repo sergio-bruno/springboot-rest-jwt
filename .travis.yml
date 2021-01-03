@@ -1,0 +1,17 @@
+language: bash
+services: docker
+before_install:
+  - cd slbruno-jwt\ Docker/
+  - echo "Acessamos a pasta do Docker!"
+script:
+  - docker-compose build
+before_deploy:
+  - echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
+deploy:
+  provider: script
+  script:
+    docker push sergiolbruno/springboot-rest-jwt;
+  on:
+    branch: master
+notifications:
+  email: false
