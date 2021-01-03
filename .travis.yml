@@ -1,7 +1,7 @@
 language: bash
 services: docker
 before_install:
-  - cd slbruno-jwt\ Docker/
+  - cd slbruno-jwt/
   - echo "Acessamos a pasta do Docker!"
 script:
   - docker-compose build
