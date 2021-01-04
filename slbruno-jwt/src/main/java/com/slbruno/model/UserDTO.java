@@ -1,5 +1,7 @@
 package com.slbruno.model;
 
+import java.util.List;
+
 public class UserDTO {
 
 	private String username;
@@ -7,6 +9,7 @@ public class UserDTO {
 	private String firstname;
 	private String lastname;
 	private String email;
+	private List<DAOPhone> daoPhones;
 	
 	public String getUsername() {
 		return username;
@@ -46,6 +49,14 @@ public class UserDTO {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public List<DAOPhone> getDaoPhones() {
+		return daoPhones;
+	}
+
+	public void setDaoPhones(List<DAOPhone> daoPhones) {
+		this.daoPhones = daoPhones;
 	}
 
 }

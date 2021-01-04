@@ -47,6 +47,7 @@ public class JwtUserDetailsService implements UserDetailsService {
 		newUser.setLastname(user.getLastname());
 		newUser.setEmail(user.getEmail());
 		
+		newUser.setDaoPhones(user.getDaoPhones());
 		//daoPhone.setNumber(0);
 		//daoPhone.setArea_code(0);
 		//daoPhone.setCountry_code("+55");
