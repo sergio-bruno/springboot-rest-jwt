@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.slbruno.service.JwtUserDetailsService;
 
+import com.slbruno.exception.BadRequest;
+
 /*
 //Para retornar o Token
 import org.springframework.security.core.userdetails.UserDetails;
@@ -72,9 +74,9 @@ public class JwtAuthenticationController {
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 		} catch (DisabledException e) {
-			throw new Exception("USER_DISABLED", e);
+			throw new BadRequest("usuário desabilitado!");
 		} catch (BadCredentialsException e) {
-			throw new Exception("INVALID_CREDENTIALS", e);
+			throw new BadRequest("Falha na autenticação");
 		}
 	}
 }
